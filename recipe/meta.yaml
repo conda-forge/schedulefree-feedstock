@@ -1,5 +1,5 @@
 {% set name = "schedulefree" %}
-{% set version = "1.2.7" %}
+{% set version = "1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/schedulefree-{{ version }}.tar.gz
-  sha256: e97f8b8db332dafc9999a2c4ed68429606579d5eb250ebb953f233efffdc79c1
+  sha256: bf72aca89acde8e2e013e48ceddd217065bc4185c92d66e4a04ce19a0b51e895
 
 build:
   noarch: python
