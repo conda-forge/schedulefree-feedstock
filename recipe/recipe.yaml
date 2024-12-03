@@ -1,0 +1,43 @@
+context:
+  version: 1.4
+
+package:
+  name: schedulefree
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/s/schedulefree/schedulefree-${{ version }}.tar.gz
+  sha256: 59b7ec9ac0f714730cbcdde435b7d9b415d3fc3c5d2133e0f124e07aba4ba86a
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}
+    - setuptools >=42
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pytorch >=2.0
+    - typing_extensions
+
+tests:
+  - python:
+      imports:
+        - schedulefree
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Schedule Free Learning in PyTorch
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/facebookresearch/schedule_free
+
+extra:
+  recipe-maintainers:
+    - synapticarbors
