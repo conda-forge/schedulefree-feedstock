@@ -1,14 +1,14 @@
 {% set python_min = python_min|default("0.1a0") %}
 {% set name = "schedulefree" %}
-{% set version = "1.3" %}
+{% set version = "1.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/schedulefree-{{ version }}.tar.gz
-  sha256: bf72aca89acde8e2e013e48ceddd217065bc4185c92d66e4a04ce19a0b51e895
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/schedulefree-{{ version }}.tar.gz
+  sha256: 59b7ec9ac0f714730cbcdde435b7d9b415d3fc3c5d2133e0f124e07aba4ba86a
 
 build:
   noarch: python
