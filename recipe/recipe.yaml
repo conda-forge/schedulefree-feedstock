@@ -1,6 +1,5 @@
 context:
-  version: 1.4
-  python_min: "3.9"
+  version: 1.4.1
 
 package:
   name: schedulefree
@@ -8,24 +7,22 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/schedulefree/schedulefree-${{ version }}.tar.gz
-  sha256: 59b7ec9ac0f714730cbcdde435b7d9b415d3fc3c5d2133e0f124e07aba4ba86a
+  sha256: 69ef25601d1fc0d8dd00cb36f9af78833f88b7846f1bb6ddecc9f144f3e9f7cb
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: python -m pip install . -vv
+  script: python -m pip install . -vv --no-build-isolation --no-deps
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=42
-    - wheel
+    - hatchling
     - pip
   run:
     - python >=${{ python_min }}
-    - pytorch >=2.0
+    - pytorch
     - typing_extensions
-
 tests:
   - python:
       imports:
